@@ -2,6 +2,7 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
+from langchain_core.output_parsers import StrOutputParser
 
 
 # ADDITIONAL PACKAGES
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     llm = ChatOllama(model='llama3')
     
     # Criar a cadeia LLM (PromptTemplate + ChatOpenAI)
-    chain = prompt=summary_prompt_template | llm
+    chain = prompt=summary_prompt_template | llm | StrOutputParser()
     
     # Executar a cadeia de prompts
     res = chain.invoke(input={"information": information})
