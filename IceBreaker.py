@@ -1,7 +1,10 @@
+# CORE PACKAGES
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
+
+# ADDITIONAL PACKAGES
 from dotenv import load_dotenv
-from langchain.chains import LLMChain
 import os
 
 load_dotenv()
