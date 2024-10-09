@@ -18,7 +18,7 @@ Musk expressou opiniões que o tornaram uma figura polarizadora e controversa.[1
 
 """
 if __name__ == '__main__':
-    print('Hello LangChain')
+    print(os.getenv('OPENAI_KEY'))
     
     summary_template = """
     
