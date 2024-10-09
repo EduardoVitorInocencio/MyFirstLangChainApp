@@ -3,6 +3,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
 
+
 # ADDITIONAL PACKAGES
 from dotenv import load_dotenv
 import os
@@ -32,7 +33,8 @@ if __name__ == '__main__':
     
     summary_prompt_template = PromptTemplate(input_variables =["information"], template = summary_template)
     
-    llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo',openai_api_key=openai_api_key)
+    # llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo',openai_api_key=openai_api_key)
+    llm = ChatOllama(model='llama3')
     
     # Criar a cadeia LLM (PromptTemplate + ChatOpenAI)
     chain = prompt=summary_prompt_template | llm
