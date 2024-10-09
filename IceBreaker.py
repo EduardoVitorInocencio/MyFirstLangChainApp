@@ -32,10 +32,14 @@ if __name__ == '__main__':
         2. two interesting fact about them
     """
     
+    summary_template = """
+        write me a song about birds and water
+    """
+    
     summary_prompt_template = PromptTemplate(input_variables =["information"], template = summary_template)
     
     # llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo',openai_api_key=openai_api_key)
-    llm = ChatOllama(model='llama3')
+    llm = ChatOllama(model='mistral')
     
     # Criar a cadeia LLM (PromptTemplate + ChatOpenAI)
     chain = prompt=summary_prompt_template | llm | StrOutputParser()
